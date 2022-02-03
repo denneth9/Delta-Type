@@ -148,7 +148,7 @@ namespace DeltaType
             if ((ModifierKeys & Keys.Shift) != 0 && shifted == false)
             {
                 List<delta> uppercase = new List<delta>();
-                string filter = "uppercase";
+                string filter = "upper";
                 if (textBox1.Text.Length == 0)
                 {
                     foreach (var character in characters)
