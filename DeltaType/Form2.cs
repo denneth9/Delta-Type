@@ -39,9 +39,12 @@ namespace DeltaType
                     while (!reader.EndOfStream)
                     {
                         var line = reader.ReadLine();
-                        var values = line.Split(',');
-                        values[1] = values[1].Trim();
-                        characters.Add(new delta(values[0], values[1])); //insert values into delta list
+                        if (line.Substring(0, 1) != "#") //ignore lines beginning with #
+                        {
+                            var values = line.Split(',');
+                            values[1] = values[1].Trim();
+                            characters.Add(new delta(values[0], values[1])); //insert values into delta list
+                        }
                     }
                 }
             }

@@ -15,6 +15,18 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_10C3A8725BAC4FD1B35B3B6DBB9E988C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4B3A4369DE3649F6961C41A0AE704DCA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_4BB5C15AE9D248A99041691C2F19C1CF"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -154,6 +166,46 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_10C3A8725BAC4FD1B35B3B6DBB9E988C"
+            {
+            "SourcePath" = "8:..\\..\\DeltaType\\DeltaType\\chars.csv"
+            "TargetName" = "8:chars.csv.bu"
+            "Tag" = "8:"
+            "Folder" = "8:_3AE6595013094C49A438BA937FD2FB1E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4B3A4369DE3649F6961C41A0AE704DCA"
+            {
+            "SourcePath" = "8:..\\..\\DeltaType\\DeltaType\\chars.csv"
+            "TargetName" = "8:chars.csv"
+            "Tag" = "8:"
+            "Folder" = "8:_3AE6595013094C49A438BA937FD2FB1E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4BB5C15AE9D248A99041691C2F19C1CF"
             {
             "SourcePath" = "8:..\\..\\DeltaType\\DeltaType\\delta.ico"
@@ -182,7 +234,7 @@
         {
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_3AE6595013094C49A438BA937FD2FB1E"
             {
-            "DefaultLocation" = "8:[ProgramFiles64Folder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -230,15 +282,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Delta Type"
-        "ProductCode" = "8:{FC0FF1C7-308E-46D6-B06A-52124EDA600A}"
-        "PackageCode" = "8:{C59F0E8D-75C6-4F5A-A0DC-8FD6DE21AB7A}"
+        "ProductCode" = "8:{D2A9AADC-8F88-4207-82D6-F53336E4F06F}"
+        "PackageCode" = "8:{B3538B40-AC06-4CCC-9E27-1008A461948F}"
         "UpgradeCode" = "8:{1CBE297B-95C9-48E4-9686-C0BAF06D6B35}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.1.0"
+        "ProductVersion" = "8:1.1.1"
         "Manufacturer" = "8:Periapsis Propulsion"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -248,11 +300,11 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:More at denneth.nl"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:"
+        "ARPPRODUCTICON" = "8:_4BB5C15AE9D248A99041691C2F19C1CF"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
-        "TargetPlatform" = "3:1"
+        "TargetPlatform" = "3:0"
         "PreBuildEvent" = "8:"
         "PostBuildEvent" = "8:"
         "RunPostBuildEvent" = "3:0"

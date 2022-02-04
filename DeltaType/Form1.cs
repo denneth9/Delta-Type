@@ -53,8 +53,12 @@ namespace DeltaType
 
         private void resetToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Application.Restart();
-            Environment.Exit(0);
+            if (MessageBox.Show("This will reset the character configuration to the factory defaults and restart Δ Type \nare you sure you want to continue?", "Δ Type factory reset", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                File.Copy(@"chars.csv.bu", @"chars.csv", true);
+                Application.Restart();
+                Environment.Exit(0);
+            }
         }
 
         private void closeToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -78,6 +82,10 @@ namespace DeltaType
                 Properties.Settings.Default.Save();
                 bootMeUp1.Register();
             }
+        }
+        private void editCharacterDefenitionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("notepad.exe", "chars.csv");
         }
     }
 }

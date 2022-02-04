@@ -13,6 +13,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="chars.csv" />
+    <None Remove="chars.csv.bu" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="chars.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chars.csv.bu">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="delta.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -51,9 +62,6 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
     <None Update="delta.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="chars.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Properties\Settings.settings">
