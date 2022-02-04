@@ -38,6 +38,7 @@
             this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
+            this.bootMeUp1 = new WK.Libraries.BootMeUpNS.BootMeUp(this.components);
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +47,6 @@
             this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.notifyIcon1.BalloonTipText = "Text";
             this.notifyIcon1.BalloonTipTitle = "Title";
-            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "Delta Type";
             this.notifyIcon1.Visible = true;
             // 
@@ -63,7 +63,7 @@
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.removeFromStartupToolStripMenuItem});
-            this.settingsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("settingsToolStripMenuItem.Image")));
+            this.settingsToolStripMenuItem.Image = global::DeltaType.Properties.Resources.gear;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
@@ -99,6 +99,19 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "IGNORE ME";
             // 
+            // bootMeUp1
+            // 
+            this.bootMeUp1.BootArea = WK.Libraries.BootMeUpNS.BootMeUp.BootAreas.Registry;
+            this.bootMeUp1.ContainerControl = this;
+            this.bootMeUp1.Enabled = false;
+            this.bootMeUp1.Exception = ((System.Exception)(resources.GetObject("bootMeUp1.Exception")));
+            this.bootMeUp1.Parameters = "silent";
+            this.bootMeUp1.ParentForm = this;
+            this.bootMeUp1.RunWhenDebugging = false;
+            this.bootMeUp1.Tag = null;
+            this.bootMeUp1.TargetUser = WK.Libraries.BootMeUpNS.BootMeUp.TargetUsers.CurrentUser;
+            this.bootMeUp1.UseAlternativeOnFail = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -131,5 +144,6 @@
         private ToolStripMenuItem settingsToolStripMenuItem;
         private ToolStripMenuItem removeFromStartupToolStripMenuItem;
         private Label label1;
+        private WK.Libraries.BootMeUpNS.BootMeUp bootMeUp1;
     }
 }

@@ -1,51 +1,51 @@
 Alpha, α
-Alpha uppercase, Α
+Alpha upper, Α
 Beta, β
-Beta uppercase, Β
+Beta upper, Β
 Gamma, γ
-Gamma uppercase, Γ
+Gamma upper, Γ
 Delta, δ
-Delta uppercase, Δ
+Delta upper, Δ
 Epsilon, ϵ
-Epsilon uppercase, E
+Epsilon upper, E
 Zeta, ζ
-Zeta uppercase, Z
+Zeta upper, Z
 Eta, η
-Eta uppercase, H
+Eta upper, H
 Theta, θ
-Theta uppercase, Θ
+Theta upper, Θ
 Iota, ι
-Iota uppercase, I
+Iota upper, I
 Kappa, κ
-Kappa uppercase, K
+Kappa upper, K
 Lambda, λ
-Lambda uppercase, Λ
+Lambda upper, Λ
 Mu, μ
-Mu uppercase, M
+Mu upper, M
 Nu, ν
-Nu uppercase,N
+Nu upper,N
 Xi, ξ
-Xi uppercase, Ξ
+Xi upper, Ξ
 Omicron, o
-Omicron uppercase, O
+Omicron upper, O
 Pi, π
-Pi uppercase, Π
+Pi upper, Π
 Rho, ρ
-Rho uppercase, P
+Rho upper, P
 Sigma, σ
-Sigma uppercase, Σ
+Sigma upper, Σ
 Tau, τ
-Tau uppercase, T
-Upsilon, υ
-Upsilon uppercase, ϒ
+Tau upper, T
+upsilon, υ
+upsilon upper, ϒ
 Phi, ϕ
-Phi uppercase, Φ
+Phi upper, Φ
 Chi, χ
-Chi uppercase, X
+Chi upper, X
 Psi, ψ
-Psi uppercase, Ψ
+Psi upper, Ψ
 Omega, ω
-Omega uppercase, Ω
+Omega upper, Ω
 kilogram per meter squared, kg / m²
 Squared, ²
 Trademark, ™
@@ -53,7 +53,7 @@ TM, ™
 Copyright, ©
 Registered, ®
 Thorn, 	þ
-Thorn uppercase, Þ
+Thorn upper, Þ
 Diameter, ⌀
 Plus or Minus, ±
 Square Root, √
@@ -88,3 +88,4 @@ Plus, ⁺
 The answer to life the universe and everything, 42
 Euro, €
 Ruble, ₽
+Caret, ^
