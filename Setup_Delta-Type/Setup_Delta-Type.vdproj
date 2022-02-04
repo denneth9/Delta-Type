@@ -234,7 +234,7 @@
         {
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_3AE6595013094C49A438BA937FD2FB1E"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:[AppDataFolder][Manufacturer]\\[ProductName]"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -283,7 +283,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Delta Type"
         "ProductCode" = "8:{D2A9AADC-8F88-4207-82D6-F53336E4F06F}"
-        "PackageCode" = "8:{B3538B40-AC06-4CCC-9E27-1008A461948F}"
+        "PackageCode" = "8:{85B9806F-13D7-495E-BE88-3ED57BC929FA}"
         "UpgradeCode" = "8:{1CBE297B-95C9-48E4-9686-C0BAF06D6B35}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
