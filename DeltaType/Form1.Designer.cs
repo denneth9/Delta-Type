@@ -105,7 +105,7 @@
             this.toolStripMenuItem1.Enabled = false;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem1.Text = "Version 1.1.1";
+            this.toolStripMenuItem1.Text = "Version 1.1.2";
             // 
             // label1
             // 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Windows;
 namespace DeltaType
 {
     public partial class Form2 : Form
@@ -26,9 +27,29 @@ namespace DeltaType
         private void Form2_Load(object sender, EventArgs e)
         {
             Activate();
+            int height = Convert.ToInt32(Screen.PrimaryScreen.Bounds.Height);
+            int width = Convert.ToInt32(Screen.PrimaryScreen.Bounds.Width);
             int mousex = MousePosition.X;
             int mousey = MousePosition.Y;
-            Location = new Point(mousex, mousey);
+            int locx = mousex;
+            int locy = mousey;
+            if(mousex >= width / 2) //check which quadrant of the primary screen the mouse is on, and place the window accordingly
+            {
+                locx = mousex - Size.Width;
+            }
+            else if (mousex < width / 2)
+            {
+                locx = mousex;
+            }
+            if (mousey >= height / 2)
+            {
+                locy = mousey - Size.Height;
+            }
+            else if (mousey < height / 2)
+            {
+                locy = mousey;
+            }
+            Location = new Point(locx, locy);
             this.StartPosition = FormStartPosition.Manual;
             try
             {
