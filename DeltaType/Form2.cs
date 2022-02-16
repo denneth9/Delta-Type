@@ -243,10 +243,14 @@ namespace DeltaType
                 {
                     Button button = controls.First();
                     Clipboard.SetText(button.Text);
-                    hkl.Remove(hotkey1);
                     Close();
                 }
             }
+        }
+
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            hkl.Remove(hotkey1);
         }
     }
 }
