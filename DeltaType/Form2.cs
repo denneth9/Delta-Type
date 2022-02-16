@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Windows;
+using WK.Libraries.HotkeyListenerNS;
+
 namespace DeltaType
 {
     public partial class Form2 : Form
@@ -9,6 +11,7 @@ namespace DeltaType
         {
             InitializeComponent();
         }
+        Hotkey hotkey1 = new Hotkey(Keys.Control, Keys.C);
         public class delta //delta class to store both character and description
         {
 
@@ -23,7 +26,7 @@ namespace DeltaType
         }
         public List<delta> characters = new List<delta>();
         public List<delta> filtered = new List<delta>();
-
+        HotkeyListener hkl = new HotkeyListener();
         private void Form2_Load(object sender, EventArgs e)
         {
             Activate();
@@ -53,28 +56,32 @@ namespace DeltaType
             this.StartPosition = FormStartPosition.Manual;
             try
             {
-                using (var reader = new StreamReader(@"chars.csv")) //read local .csv file
+                using (var reader = new StreamReader(Properties.Settings.Default.FilePath)) //read local .csv file
                 {
-                    List<string> listA = new List<string>();
-                    List<string> listB = new List<string>();
                     while (!reader.EndOfStream)
                     {
                         var line = reader.ReadLine();
-                        if (line.Substring(0, 1) != "#") //ignore lines beginning with #
+                        if (line.Trim() != string.Empty) //ignore empty lines
                         {
-                            var values = line.Split(',');
-                            values[1] = values[1].Trim();
-                            characters.Add(new delta(values[0], values[1])); //insert values into delta list
+                            if (line.Substring(0, 1) != "#") //ignore lines beginning with #
+                            {
+                                var values = line.Split(',');
+                                values[1] = values[1].Trim();
+                                characters.Add(new delta(values[0], values[1])); //insert values into delta list
+                            }
                         }
                     }
                 }
             }
             catch
             {
-                MessageBox.Show("Error reading from .csv file, please check formatting", "Δ Type has encountered an error!",
+                MessageBox.Show("Error reading from .csv file", "Δ Type has encountered an error!",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Close();
             }
+
+            hkl.Add(hotkey1);
+            hkl.HotkeyPressed += Hkl_HotkeyPressed;
 
             this.Deactivate += new System.EventHandler(this.Form2_Deactivate);
             characters.Sort((a, b) => a.character.CompareTo(b.character));
@@ -128,14 +135,6 @@ namespace DeltaType
                             button.AutoSize = true;
                             button.AutoSizeMode = AutoSizeMode.GrowAndShrink;
                             break;
-
-                    }
-                    if (character.character.Length == 1)
-                    {
-                    }
-                    else
-                    {
-
                     }
                     button.Click += new EventHandler(this.button1_Click);
                     flowLayoutPanel1.Controls.Add(button);
@@ -149,10 +148,6 @@ namespace DeltaType
             }
 
         }
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-            //no idea where this came from, or how to remove it
-        }
         private void Form2_Deactivate(object sender, EventArgs e)
         {
             this.Close();
@@ -163,7 +158,15 @@ namespace DeltaType
             Button button = sender as Button;
             if (button == null)
                 return;
-            SendKeys.Send(button.Text);
+            if ((ModifierKeys & Keys.Control) != 0)
+            {
+                Clipboard.SetText(button.Text);
+                hkl.Remove(hotkey1);
+            }
+            else
+            {
+                SendKeys.Send(button.Text);
+            }
             Close();
         }
         bool shifted;
@@ -229,6 +232,21 @@ namespace DeltaType
             //if the link is clicked, open denneth.nl in the default browser and display it as visited
             linkLabel1.LinkVisited = true;
             System.Diagnostics.Process.Start("explorer", "https://denneth.nl");
+        }
+
+        private void Hkl_HotkeyPressed(object sender, HotkeyEventArgs e)
+        {
+            if (e.Hotkey == hotkey1)
+            {
+                var controls = flowLayoutPanel1.Controls.OfType<Button>();
+                if (controls.Count() >= 1)
+                {
+                    Button button = controls.First();
+                    Clipboard.SetText(button.Text);
+                    hkl.Remove(hotkey1);
+                    Close();
+                }
+            }
         }
     }
 }

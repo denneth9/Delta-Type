@@ -13,14 +13,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="chars.csv" />
+    <None Remove="Characters.csv" />
     <None Remove="chars.csv.bu" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="chars.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="chars.csv.bu">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -60,6 +57,12 @@
   <ItemGroup>
     <None Update="1200px-Greek_uc_delta.svg.ico">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Character Sets\Characters.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Character Sets\csv.tpl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="delta.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

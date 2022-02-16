@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using Microsoft.Win32;
+using System.Reflection;
 using WK.Libraries.HotkeyListenerNS;
-//using StartupHelper;
 namespace DeltaType
 {
     public partial class Form1 : Form
@@ -10,23 +10,30 @@ namespace DeltaType
         {
             InitializeComponent();
         }
-        Hotkey hotkey1 = new Hotkey(Keys.Control, Keys.D);
+        internal static HotkeyListener hkl = new HotkeyListener();
+        internal static Hotkey hotkey1 = new Hotkey(Keys.Control, Keys.D);
         private void Form1_Load(object sender, EventArgs e)
         {
+            hkl.Update(ref hotkey1, HotkeyListener.Convert(Properties.Settings.Default.Shortcut));
             if (bootMeUp1.Enabled == false && Properties.Settings.Default.Startup == true) 
             {
                 bootMeUp1.Register();
             } //this could be better / removed
-            if (bootMeUp1.Enabled == true)
+            var fileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Character Sets");
+            DirectoryInfo d = new DirectoryInfo(fileName); //Assuming Test is your Folder
+            FileInfo[] Files = d.GetFiles("*.csv"); //Getting Text files
+            if (Files.Length > 0)
             {
-                (contextMenuStrip1.Items[0] as ToolStripMenuItem).DropDownItems[0].Text = "Disable Startup";
+                if (Properties.Settings.Default.FilePath == string.Empty)
+                {
+                    Properties.Settings.Default.FilePath = Files[0].FullName;
+                }
             }
             else
             {
-                (contextMenuStrip1.Items[0] as ToolStripMenuItem).DropDownItems[0].Text = "Enable Startup";
+                MessageBox.Show("Please make a preset!");
             }
             notifyIcon1.ContextMenuStrip = contextMenuStrip1;
-            var hkl = new HotkeyListener();
             hkl.Add(hotkey1);
             hkl.HotkeyPressed += Hkl_HotkeyPressed;
             notifyIcon1.BalloonTipTitle = "Welcome to Δ Type!";
@@ -52,7 +59,7 @@ namespace DeltaType
         }
 
         private void resetToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
+        {//currently deimplemented while presets are made
             if (MessageBox.Show("This will reset the character configuration to the factory defaults and restart Δ Type \nare you sure you want to continue?", "Δ Type factory reset", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 File.Copy(@"chars.csv.bu", @"chars.csv", true);
@@ -66,26 +73,21 @@ namespace DeltaType
             this.Close();
         }
 
-        private void removeFromStartupToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if(bootMeUp1.Enabled && Properties.Settings.Default.Startup == true)
-            {
-                (contextMenuStrip1.Items[0] as ToolStripMenuItem).DropDownItems[0].Text = "Enable Startup";
-                Properties.Settings.Default.Startup = false;
-                Properties.Settings.Default.Save();
-                bootMeUp1.Unregister();
-            }
-            else if(bootMeUp1.Enabled == false && Properties.Settings.Default.Startup == false)
-            {
-                (contextMenuStrip1.Items[0] as ToolStripMenuItem).DropDownItems[0].Text = "Disable Startup";
-                Properties.Settings.Default.Startup = true;
-                Properties.Settings.Default.Save();
-                bootMeUp1.Register();
-            }
-        }
         private void editCharacterDefenitionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("notepad.exe", "chars.csv");
+        }
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 frm = new Form3(this, hotkey1);
+            hkl.SuspendOn(frm);
+            frm.bootMeUp1 = bootMeUp1;
+            frm.Show();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.Save();
         }
     }
 }

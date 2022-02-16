@@ -5,5 +5,14 @@
     <Setting Name="Startup" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="FilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="File" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Characters</Value>
+    </Setting>
+    <Setting Name="Shortcut" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Control + D</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
