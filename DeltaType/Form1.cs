@@ -14,6 +14,10 @@ namespace DeltaType
         internal static Hotkey hotkey1 = new Hotkey(Keys.Control, Keys.D);
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (HotkeyListener.Convert(Properties.Settings.Default.Shortcut).ToString() == "None")
+            {
+                Properties.Settings.Default.Shortcut = hotkey1.ToString();
+            }
             hkl.Update(ref hotkey1, HotkeyListener.Convert(Properties.Settings.Default.Shortcut));
             if (bootMeUp1.Enabled == false && Properties.Settings.Default.Startup == true) 
             {

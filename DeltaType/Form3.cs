@@ -147,5 +147,10 @@ namespace DeltaType
         {
             Properties.Settings.Default.Shortcut = textBox2.Text;
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Character Sets"));
+        }
     }
 }

@@ -38,6 +38,7 @@
             this.radioListButton1 = new DeltaType.RadioListButton();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // checkBox1
@@ -129,11 +130,22 @@
             this.textBox2.TabIndex = 8;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(136, 236);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(82, 23);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "Open Folder";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(226, 263);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.radioListButton1);
@@ -164,5 +176,6 @@
         private RadioListButton radioListButton1;
         private Label label2;
         private TextBox textBox2;
+        private Button button4;
     }
 }
