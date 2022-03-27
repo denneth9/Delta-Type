@@ -10,9 +10,15 @@ A small program to search for and type out characters or collections of characte
 
 After running the program, simply press (Control + D) to open the pop-up.
 
+![Delta Type](https://user-images.githubusercontent.com/26671826/160284672-2721639f-b0e1-4e45-a37a-c221ff207bbc.png)
+
 Type in text to have it automagically search for characters (typing "del" returns the 2 delta characters for example)
 
+![Searching For Delta](https://user-images.githubusercontent.com/26671826/160284811-1b7a5247-9b5b-43e5-a91c-cba6461de6fb.png)
+
 Press enter to type out the most left one currently on screen, hold shift to only show capitals (search for "del" returns 'δ' and 'Δ', pressing enter types 'δ', but holding shift and pressing enter returns 'Δ' )
+
+![Holding Shift](https://user-images.githubusercontent.com/26671826/160284803-4d0c4f88-6dd8-4f57-9445-652c75492521.png)
 
 Clicking a character types it out, holding control and clicking a character copies it to the clipboard
 
@@ -20,15 +26,27 @@ Clicking a character types it out, holding control and clicking a character copi
 
 Δ Type comes with a system tray icon.
 
+![Icon](https://user-images.githubusercontent.com/26671826/160285012-80e4d019-ce53-48c8-ab2a-feea23d520d3.png)
+
 Simply right click the Δ icon in your system tray, which gives you the option to either close the program, or open settings.
+
+![Settings](https://user-images.githubusercontent.com/26671826/160285003-fa181f54-32f7-4a72-a5e8-453fa08edfe1.png)
 
 The settings menu includes a way to change the shortcut to open the program, a toggle on whether to open at startup or not, and a character definition manager.
 
+![Settings Menu](https://user-images.githubusercontent.com/26671826/160285024-8472c8ba-46ab-4f15-93e1-2479edad5e1d.png)
+
 To create a new character set, simply fill in a name, and press "Create".
+
+![Creating a set](https://user-images.githubusercontent.com/26671826/160285032-fa1dda49-a2dc-467d-b128-2acb03ed1c23.png)
 
 You can toggle between them by selecting them in the list provided.
 
+![Toggle](https://user-images.githubusercontent.com/26671826/160285036-cee75bd0-8721-41df-b6e0-ba2bc9af0360.png)
+
 By pressing edit it opens the definition in your default text editor.
+
+![Opened Config](https://user-images.githubusercontent.com/26671826/160285058-4ec62eea-326e-4c74-ae2b-9fc8d8c84320.png)
 
 ## Creating character definitions
 
